@@ -15,32 +15,24 @@ public class ActualizadorEstado {
 	void setup()
 	{
 	    ConfigurationBuilder cb = new ConfigurationBuilder();
-	    cb.setOAuthConsumerKey("Kq3yXqsZ6wUpaYvVi0qExiggb");
-	    cb.setOAuthConsumerSecret("Ia9QPBUWvHVIx6MCeaZO6Lq7HP25nYHJlNuOKSEbrbhe9BrTLK");
-	    cb.setOAuthAccessToken("705403074479833088-bjcIsU3lyoReodWYVCqKIu1ilRhNa5C");
-	    cb.setOAuthAccessTokenSecret("fpFatozSUJGuEzSz3kWxMeZ2qTbyJ6Sse5sj0a9Aiauug");
+	    cb.setOAuthConsumerKey(AuthInfo.OAuthConsumerKey);
+	    cb.setOAuthConsumerSecret(AuthInfo.OAuthConsumerKey);
+	    cb.setOAuthAccessToken(AuthInfo.OAuthAccessToken);
+	    cb.setOAuthAccessTokenSecret(AuthInfo.OAuthAccessTokenSecret);
 	    TwitterFactory tf = new TwitterFactory(cb.build());
 	    twitter = tf.getInstance();
 	}
 	
 	void twitear(){
-		buscarPalabras();
-		
-	}
-	
-
-
-	
-
-	private void buscarPalabras() {
 		try {
-			Process p =Runtime.getRuntime().exec("/home/jesus/buscarPalabras.sh ");
-			
-			
-		} catch (IOException e) {
-		} 
-		
+			twitter.updateStatus("test");
+		} catch (TwitterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+		
+	
 
 	public static void main (String[] args){
 		ActualizadorEstado actualizador = new ActualizadorEstado();
