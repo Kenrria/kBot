@@ -1,0 +1,4 @@
+total 20
+drwxrwxr-x 2 jesus jesus 4096 mar  3 15:58 bin
+-rw-rw-r-- 1 jesus jesus    0 mar  3 18:06 ls-l.txt
+drwxrwxr-x 2 jesus jesus 4096 mar  3 15:58 src
